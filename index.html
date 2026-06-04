@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Final Verdict - Ekip & Karakter Veritabanı</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">The Final Verdict Paneli</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Dokümantasyon</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-5 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Veri Filtreleme</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="searchInput" class="form-label">İsim ile Ara</label>
+                            <input type="text" class="form-control" id="searchInput" placeholder="Örn: Muhammet">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="roleSelect" class="form-label">Rol / Kategori Seçimi</label>
+                            <select class="form-select" id="roleSelect">
+                                <option value="Tümü">Tümü</option>
+                                <option value="Frontend">Frontend Developer</option>
+                                <option value="Backend">Backend Developer</option>
+                                <option value="Tasarım">Tasarımcı</option>
+                                <option value="Yönetim">Proje Yöneticisi</option>
+                                <option value="Ses">Ses Tasarımcısı</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label d-block">Durum</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="statusRadio" id="statusAll" value="Tümü" checked>
+                                <label class="form-check-label" for="statusAll">Hepsi</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="statusRadio" id="statusActive" value="Aktif">
+                                <label class="form-check-label" for="statusActive">Aktif</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="statusRadio" id="statusPassive" value="Pasif">
+                                <label class="form-check-label" for="statusPassive">Pasif</label>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-outline-secondary w-100" id="resetBtn">Filtreleri Temizle</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-7">
+                <div id="noDataAlert" class="alert alert-warning d-none" role="alert">
+                    Aradığınız kriterlere uygun kayıt bulunamadı.
+                </div>
+
+                <div class="row" id="dataContainer">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
